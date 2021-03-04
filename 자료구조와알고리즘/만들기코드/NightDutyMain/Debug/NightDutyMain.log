@@ -1,0 +1,11 @@
+﻿  NightDutyMain.cpp
+d:\development\c++\c++실습\chapter7\nightdutymain\nightdutymain.cpp(22): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+d:\development\c++\c++실습\chapter7\nightdutymain\nightdutymain.cpp(27): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+d:\development\c++\c++실습\chapter7\nightdutymain\nightdutymain.cpp(32): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+d:\development\c++\c++실습\chapter7\nightdutymain\nightdutymain.cpp(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  NightDutyMain.vcxproj -> D:\Development\C++\C++실습\Chapter7\Debug\NightDutyMain.exe
+  NightDutyMain.vcxproj -> D:\Development\C++\C++실습\Chapter7\Debug\NightDutyMain.pdb (Partial PDB)

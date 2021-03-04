@@ -1,0 +1,5 @@
+﻿  HeadAddLinkedRead.cpp
+c:\users\c-01\desktop\ncs 프로그래밍 강연 자료\1_게임 자료구조와 알고리즘\게임자료구조와 알고리즘\강의용코드\chapter7\headaddlinkedread\headaddlinkedread.cpp(23): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 'scanf' 선언을 참조하십시오.
+  HeadAddLinkedRead.vcxproj -> C:\Users\C-01\Desktop\NCS 프로그래밍 강연 자료\1_게임 자료구조와 알고리즘\게임자료구조와 알고리즘\강의용코드\Chapter7\Debug\HeadAddLinkedRead.exe
+  HeadAddLinkedRead.vcxproj -> C:\Users\C-01\Desktop\NCS 프로그래밍 강연 자료\1_게임 자료구조와 알고리즘\게임자료구조와 알고리즘\강의용코드\Chapter7\Debug\HeadAddLinkedRead.pdb (Partial PDB)
