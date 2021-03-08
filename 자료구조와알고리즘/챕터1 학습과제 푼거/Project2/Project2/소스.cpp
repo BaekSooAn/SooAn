@@ -33,16 +33,16 @@ int BSearch(int arr[], int first, int mid, int last, int find)
 		BSearch(arr, mid + 1, (first + last) / 2, last, find);
 }
 
-void Hanoi(int num,int before, int ing ,int after)
+void Hanoi(int num,int before, int after2,int after)
 {	//1이 젤 작은 원판 숫자 클수록 큰 원판
 
 	if (num == 1) 
 		cout << "원판1 을 " << before << "에서" << after << "로 이동" << endl;
 	else
 	{
-		Hanoi(num - 1, before, after, ing);
+		Hanoi(num - 1, before, after, after2);
 		cout << "원판" << num << " 을 " << before << "에서" << after << "로 이동" << endl;
-		Hanoi(num - 1, ing, before, after);
+		Hanoi(num - 1, after2, before, after);
 	}
 }
 
