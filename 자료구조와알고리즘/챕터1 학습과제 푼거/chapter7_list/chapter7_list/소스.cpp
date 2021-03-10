@@ -45,7 +45,7 @@ LData LRemove(List *plist,LData CulPosition)
 	LData rdata = plist->iArr[rpos];
 
 	for (int i = rpos; i < num - 1; i++)
-		plist->iArr[i] = plist->iArr[i + 1]; //?? 만약에 12345 있고 3 지우면 12455 되는거 아닌가요...?
+		plist->iArr[i] = plist->iArr[i + 1]; 
 
 	(plist->NumOfData)--;
 	(plist->curPosition)--;

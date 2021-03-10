@@ -1,4 +1,2 @@
 ﻿  소스.cpp
-c:\users\user\documents\github\sooan\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\chapter7_list\소스.cpp(57): warning C4101: 'DelNum' :참조되지 않은 지역 변수입니다.
-c:\users\user\documents\github\sooan\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\chapter7_list\소스.cpp(99): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  chapter7_list.vcxproj -> C:\Users\user\Documents\GitHub\SooAn\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\Debug\chapter7_list.exe
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xlocale(2043): fatal error C1088: 컴파일러 중간 파일 파일을 플러시할 수 없습니다. 'C:\Users\A06\AppData\Local\Temp\_CL_338ec3dfsy': No space left on device
