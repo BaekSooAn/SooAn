@@ -7,6 +7,30 @@ typedef struct _node
 	struct _node * next;
 } Node;
 
+Node AddHead(Node **head, Node **tail ,Node *node)
+{
+	if (head == NULL)
+		*tail = node;
+	else
+		node->next = *head;
+
+	*head = node;
+
+	return *node;
+}
+
+Node AddTail(Node **head, Node **tail, Node *node)
+{
+	if (head == NULL)
+		*head = node;
+	else
+		tail->next = node;
+
+	*tail = node;
+	return *node;
+}
+
+
 int main(void)
 {
 	Node * head = NULL;    // NULL 포인터 초기화
@@ -29,13 +53,10 @@ int main(void)
 		newNode->data = readData;
 		newNode->next = NULL;
 
-		if (head == NULL)
-			tail = newNode;
-
+		if (newNode->data % 2 == 0)
+			*newNode= AddTail(&head, &tail, newNode);
 		else
-			newNode->next=head;
-
-		head = newNode;
+			*newNode = AddHead(&head, &tail, newNode);
 	}
 	printf("\n");
 
