@@ -1,3 +1,3 @@
 ﻿  소스1.cpp
-c:\users\a07\desktop\수안\sooan\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\chapter7_list\소스1.cpp(66): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\a07\desktop\수안\sooan\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\chapter7_list\소스1.cpp(69): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
   chapter7_list.vcxproj -> C:\Users\A07\Desktop\수안\SooAn\자료구조와알고리즘\챕터1 학습과제 푼거\chapter7_list\Debug\chapter7_list.exe
