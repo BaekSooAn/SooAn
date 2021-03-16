@@ -1,4 +1,5 @@
 #include"DLinkedList.h"
+#include<Windows.h>
 #include "Point.h"
 
 int main(void)
@@ -11,22 +12,15 @@ int main(void)
 	ListInit(&list);
 
 	/*** 4개의 데이터 저장 ***/
-	ppos = (Point*)malloc(sizeof(Point));
-	printf("1번째 데이터 : 두 수를 입력하세요")
-	SetPointPos(ppos, 2, 1);
-	LInsert(&list, ppos);
-
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 2, 2);
-	LInsert(&list, ppos);
-
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 3, 1);
-	LInsert(&list, ppos);
-
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 3, 2);
-	LInsert(&list, ppos);
+	for (int i = 0; i < 4; i++)
+	{
+		ppos = (Point*)malloc(sizeof(Point));
+		printf("%d번째 데이터 ) 두 수를 입력하세요 :",i+1);
+		scanf_s("%d %d", &Num1, &Num2);
+		SetPointPos(ppos, Num1, Num2);
+		LInsert(&list, ppos);
+	}
+	
 
 	/*** 저장된 데이터의 출력 ***/
 	printf("현재 데이터의 수: %d \n", LCount(&list));
@@ -40,27 +34,28 @@ int main(void)
 	}
 	printf("\n");
 
-	/*** xpos가 2인 모든 데이터 삭제 ***/
-	compPos.xpos = 2;
-	compPos.ypos = 0;
+	/*** xpos가 입력한 데이터 삭제 ***/  
+	printf("삭제할 데이터의 x 값을 입력하세요 :");
+	scanf_s("%d", &Num1);
+	printf("삭제할 데이터의 y 값을 입력하세요 :");
+	scanf_s("%d", &Num2);
+	compPos.xpos = Num1;
+	compPos.ypos = Num2;
 
 	if (LFirst(&list, &ppos))
 	{
-		if (PointComp(ppos, &compPos) == 1)
+		if (PointComp(ppos, &compPos) == 0)
 		{
-			//List에 구조체의 주소값이 저장된 경우
-			//주소 값이 동적할당의 결과인경우를 구분해서 메모리 해제하는데는 무리가 있다.
-			//소멸할 데이터를 반환하고 메모리를 해제 할 수 있는 기회를 주어야한다.
-			//핵심을 주소값을 반환받고 직접 해제하는 코드를 작성하는것이 올바른 것이다.
 			ppos = LRemove(&list);
 			free(ppos);
 		}
 
 		while (LNext(&list, &ppos))
 		{
-			if (PointComp(ppos, &compPos) == 1)
+			if (PointComp(ppos, &compPos) == 0)
 			{
 				ppos = LRemove(&list);
+				printf("삭제된 데이터 : [%d, %d]", ppos->xpos, ppos->ypos);
 				free(ppos);
 			}
 		}
@@ -77,6 +72,6 @@ int main(void)
 			ShowPointPos(ppos);
 	}
 	printf("\n");
-
+	system("pause");
 	return 0;
 }
