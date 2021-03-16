@@ -31,7 +31,7 @@ int main(void)
 		newNode->data = readData;
 		newNode->next = NULL;
 
-		if (newNode->data % 2 == 0)
+		if (newNode->data % 2 == 0) //Â¦¼ö¸é ²¿¸®Ãß°¡
 		{
 			if (head == NULL)
 				head = newNode;
@@ -40,7 +40,7 @@ int main(void)
 
 			tail = newNode;
 		}
-		else
+		else //È¦¼ö¸é ¸Ó¸®Ãß°¡
 		{
 			if (head == NULL)
 				tail = newNode;
