@@ -18,6 +18,32 @@ void LInsert(List * plist, LData data)
 	(plist->NumOfData)++;
 }
 
+int *comp(LData data1, LData data2)
+{
+	if (data1->xpos < data2->xpos)
+		return 0;
+	else if (data1->xpos == data2->xpos &&data1->ypos < data2->ypos)
+		return 0;
+	else
+		return -1;
+}
+
+void SInsert(List * plist, LData data)
+{
+	Node * newNode = (Node*)malloc(sizeof(Node)); 
+	Node * pred = plist->head; 
+	newNode->data = data; 
+
+	While(pred->next != NULL & plist->comp(data, pred->next->data) != 0)
+	{
+		pred = pred->next; 
+	}
+	newNode->next = pred->next; 
+	pred->next = newNode;
+	(plist->NumOfData)++; 
+}
+
+
 int LFirst(List * plist, LData * pdata)
 {
 	if (plist->head->next == NULL) 
@@ -59,6 +85,6 @@ int LCount(List * plist)
 
 void SetSortRule(List * plist, int(*comp)(LData d1, LData d2))
 {
-	//이거는 정렬 규칙이 있을 때
+	plist->comp = comp;
 }
 
