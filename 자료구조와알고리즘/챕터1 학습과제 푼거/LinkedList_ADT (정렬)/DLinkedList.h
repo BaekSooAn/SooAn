@@ -25,7 +25,7 @@ typedef struct
 typedef LinkedList List;
 
 void ListInit(List * plist);
-int SortCompare(LData data1, LData data2);
+void Insert(List *plist, LData data);
 void SInsert(List *plist, LData data);
 void LInsert(List * plist, LData data);
 int LFirst(List * plist, LData * pdata);

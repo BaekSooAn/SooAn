@@ -18,29 +18,29 @@ void LInsert(List * plist, LData data)
 	(plist->NumOfData)++;
 }
 
-int *comp(LData data1, LData data2)
+void Insert(List *plist, LData data)
 {
-	if (data1->xpos < data2->xpos)
-		return 0;
-	else if (data1->xpos == data2->xpos &&data1->ypos < data2->ypos)
-		return 0;
+	if (plist->comp == NULL)
+		LInsert(plist, data);
 	else
-		return -1;
+		SInsert(plist, data);
 }
 
 void SInsert(List * plist, LData data)
 {
-	Node * newNode = (Node*)malloc(sizeof(Node)); 
-	Node * pred = plist->head; 
-	newNode->data = data; 
+	Node * newNode = (Node*)malloc(sizeof(Node));
+	Node * pred = plist->head;
+	newNode->data = data;
 
-	While(pred->next != NULL & plist->comp(data, pred->next->data) != 0)
+	while (pred->next != NULL && plist->comp(data, pred->next->data) != 0)
 	{
-		pred = pred->next; 
+		pred = pred->next;
 	}
-	newNode->next = pred->next; 
+
+	newNode->next = pred->next;
 	pred->next = newNode;
-	(plist->NumOfData)++; 
+
+	(plist->NumOfData)++;
 }
 
 
