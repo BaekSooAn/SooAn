@@ -9,28 +9,28 @@ typedef int Data;
 
 typedef struct node
 {
-	const char name[NAMEMAX];
+	const char *name[NAMEMAX];
 	Data data;
-	Node *next;
+	node *next;
 } Node;
 
 typedef struct CLL
 {
-	Node * tail;
-	Node * cur;
-	Node * before;
+	Node *tail;
+	Node *cur;
+	Node *before;
 	int numOfData;
-} CList;
+}CList;
 
 
 typedef CList List;
 
 void ListInit(List * plist);
-void LInsert(List * plist,const char name[NAMEMAX], Data data);
-void LInsertFront(List * plist, const char name[NAMEMAX], Data data);
-
-int LFirst(List * plist, Data * pdata);
-int LNext(List * plist, Data * pdata);
+void LInsert(List * plist,const char *name, Data data);
+void LInsertFront(List * plist, const char *name, Data data);
+int LSearch(List *plist, const char *name, int day);
+int LFirst(List * plist, Node * pnode);
+int LNext(List * plist, Node * pnode);
 Data LRemove(List * plist);
 int LCount(List * plist);
 

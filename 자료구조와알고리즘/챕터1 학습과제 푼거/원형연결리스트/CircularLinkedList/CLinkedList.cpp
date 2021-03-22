@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 #include "CLinkedList.h"
 
 void ListInit(List * plist)
@@ -14,7 +15,7 @@ void LInsertFront(List * plist, const char *name, Data data) //머리추가
 {
 	Node * newNode = (Node*)malloc(sizeof(Node));
 	newNode->data = data;
-	//newNode->name = name;
+	*newNode->name = name;
 
 	if (plist->tail == NULL)
 	{
@@ -30,11 +31,11 @@ void LInsertFront(List * plist, const char *name, Data data) //머리추가
 	(plist->numOfData)++;
 }
 
-void LInsert(List * plist,const char name[NAMEMAX], Data data) //꼬리 추가
+void LInsert(List * plist,const char *name, Data data) //꼬리 추가
 {
 	Node * newNode = (Node*)malloc(sizeof(Node));
 	newNode->data = data;
-	//newNode->name = name;
+	*newNode->name = name;
 	if (plist->tail == NULL)
 	{
 		plist->tail = newNode;
@@ -50,7 +51,33 @@ void LInsert(List * plist,const char name[NAMEMAX], Data data) //꼬리 추가
 	(plist->numOfData)++;
 }
 
-int LFirst(List * plist, Data * pdata)
+int LSearch(List *plist,const char *name, int day)
+{
+	//받은 이름에 해당하는 직원이 있을 경우 day 뒤의 날짜에 당직서는 사람 출력
+	if (LFirst(plist, plist->tail))
+	{
+		for (int i = 0; i < LCount(plist) - 1; i++)
+		{
+			if (strcmp(*plist->cur->name, name) == 0)
+			{
+				for (int i = 0; i < day; i++)
+				{
+					plist->before = plist->cur;
+					plist->cur = plist->cur->next;
+				}
+				printf("사원 [ %s ]   사번 [ %d ]\n", plist->cur->name, plist->cur->data);
+				return 1;
+			}
+			plist->before = plist->cur;
+			plist->cur = plist->cur->next;
+		}
+	}
+	else
+		return 0;
+
+}
+
+int LFirst(List * plist, Node * pnode)
 {
 	if (plist->tail == NULL)    // 저장된 노드가 없다면
 		return FALSE;
@@ -58,11 +85,11 @@ int LFirst(List * plist, Data * pdata)
 	plist->before = plist->tail;
 	plist->cur = plist->tail->next;
 
-	*pdata = plist->cur->data;
+	pnode = plist->cur;
 	return TRUE;
 }
 
-int LNext(List * plist, Data * pdata)
+int LNext(List * plist, Node * pnode)
 {
 	if (plist->tail == NULL)    // 저장된 노드가 없다면
 		return FALSE;
@@ -70,7 +97,7 @@ int LNext(List * plist, Data * pdata)
 	plist->before = plist->cur;
 	plist->cur = plist->cur->next;
 
-	*pdata = plist->cur->data;
+	pnode = plist->cur;
 	return TRUE;
 }
 
