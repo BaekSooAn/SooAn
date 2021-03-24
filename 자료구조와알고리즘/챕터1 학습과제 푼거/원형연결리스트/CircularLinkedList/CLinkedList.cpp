@@ -65,7 +65,7 @@ int LSearch(List *plist,const char *name, int day)
 					plist->before = plist->cur;
 					plist->cur = plist->cur->next;
 				}
-				printf("사원 [ %s ]   사번 [ %d ]\n", plist->cur->name, plist->cur->data);
+				printf("사원 [ %s ]   사번 [ %d ]\n", *plist->cur->name, plist->cur->data);
 				return 1;
 			}
 			plist->before = plist->cur;

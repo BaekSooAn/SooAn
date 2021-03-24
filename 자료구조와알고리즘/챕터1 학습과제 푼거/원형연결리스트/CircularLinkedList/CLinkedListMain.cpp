@@ -28,8 +28,10 @@ int main(void)
 		}
 	}
 
-	printf("\n\n 당직자 확인하기 ,,, \n사원명과 숫자를 입력하세요. \n해당 직원의 당직 후 입력된 날짜 뒤에 당직서는 직원을 알려드립니다.\n ");
-	scanf_s("%s%d", SearchName, day);
+	printf("\n\n 당직자 확인하기 ,,, \n사원명을 입력하세요 : ");
+	scanf_s("%s", SearchName,sizeof(SearchName));
+	printf("몇일 뒤의 당직자를 보시겠습니까? ");
+	scanf_s("%d",&day);
 
 	if (LSearch(&list, SearchName, day) == 0) //0이면 해당직원 없음
 		printf("해당하는 직원이 존재하지 않습니다,,, \n");
