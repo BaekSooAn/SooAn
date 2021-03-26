@@ -41,11 +41,12 @@ int LFirst(List * plist, Data * pdata) //여기 enum리턴
 
 int LNext(List * plist, Data * pdata)
 {
+	plist->cur = plist->cur->next;
+	*pdata = plist->cur->data;
+
 	if (plist->cur->next == plist->tail)
 		return NEXT_NULL;
 
-	plist->cur = plist->cur->next;
-	*pdata = plist->cur->data;
 	return SIDE_FULL;
 }
 
