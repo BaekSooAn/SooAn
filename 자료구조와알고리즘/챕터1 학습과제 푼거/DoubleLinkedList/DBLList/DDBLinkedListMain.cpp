@@ -5,9 +5,6 @@
 int main(void)
 {
 	List list;
-	Node *Dummy =NULL;
-	list.head = Dummy;
-	list.tail = Dummy;
 	int data;
 	ListInit(&list);
 
@@ -26,15 +23,15 @@ int main(void)
 	}
 	else if (LFirst(&list, &data) == PREV_NULL)
 	{
-		//이 바로 밑에 문장이 PREV_NEXT_NULL 여기에 해당할수도 있음. 다음데이터 유무 모름
-		printf("%d ) 이전데이터 : 없음		다음데이터 : %d\n", data, list.cur->data);
+		printf("%d ) 이전데이터 : 없음		다음데이터 : %d\n", data, list.cur->next->data);
 		while (1)
 		{
 			switch (LNext(&list,&data))
 			{
 			case NEXT_NULL:
 				printf("%d ) 이전데이터 : %d		다음데이터 : 없음\n", data, list.cur->prev->data);
-				break;
+				system("pause");
+				return 0;
 			case SIDE_FULL:
 				printf("%d ) 이전데이터 : %d		다음데이터 : %d\n", data, list.cur->prev->data,list.cur->next->data);
 				break;

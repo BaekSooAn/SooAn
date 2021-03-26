@@ -9,8 +9,6 @@ typedef enum
 	DATA_EMPTY, //아무 데이터도 없는경우(head - tail만 존재)
 	PREV_NULL, //이전노드 없는 경우
 	NEXT_NULL, //다음노드 없는 경우
-	PREV_NEXT_NULL, //이전, 다음 모두 없는 경우 (head - data(1개) - tail)
-	//이거는 언제지? 있기는 할꺼같은디
 	SIDE_FULL //양쪽 모두 연결되어있는 경우
 }RETURN;
 

@@ -12,7 +12,6 @@ void ListInit(List * plist)
 
 	plist->tail->next = NULL;
 	plist->tail->prev = plist->head;
-
 	plist->numOfData = 0;
 }
 
