@@ -16,7 +16,6 @@ typedef struct node
 class LClass
 {
 private:
-	//Node *Head;
 	Node m_StList[STUDENT_MAX];
 	int m_iNumOfData;
 

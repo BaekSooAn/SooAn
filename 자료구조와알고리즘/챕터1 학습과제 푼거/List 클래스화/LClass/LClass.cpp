@@ -1,7 +1,6 @@
 #include "LClass.h"
 
 
-
 LClass::LClass()
 {
 	m_iNumOfData = 0;
@@ -15,10 +14,6 @@ void LClass::LInsert(Node *student)
 		system("pause");
 		return;
 	}
-
-	/*if (m_iNumOfData == 0)
-		Head = student;*/
-
 	m_StList[m_iNumOfData] = *student;
 	m_iNumOfData++;
 }
@@ -52,8 +47,10 @@ void LClass::LRemove(string StName)
 	{
 		if (m_StList[i].Name == StName)
 		{
-			delete &m_StList[i];
-			m_StList[i] = { NULL };
+			for (int j = i+1; j < m_iNumOfData; j++)
+			{
+				m_StList[i] = m_StList[j];
+			}
 			cout << StName << " 학생 삭제 완료" << endl;
 			m_iNumOfData--;
 			system("pause");
